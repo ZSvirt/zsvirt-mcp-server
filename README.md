@@ -336,7 +336,7 @@ AI 会:
 
 ```bash
 # 克隆仓库
-git clone https://github.com/zstackio/zstack-mcp-server.git
+git clone https://github.com/ZSvirt/zsvirt-mcp-server/zsvirt-mcp-server.git
 cd zstack-mcp-server
 
 # 安装开发依赖
