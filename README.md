@@ -87,13 +87,13 @@ Query API 默认注入 `limit=50`，防止一次拉取全量数据撑满模型�
 
 ```bash
 # 使用 uvx 直接运行（无需安装）
-uvx zstack-mcp-server
+uvx zsvirt-mcp-server
 
 # 或使用 pipx
-pipx run zstack-mcp-server
+pipx run zsvirt-mcp-server
 
 # 如果已安装，直接运行
-zstack-mcp-server
+zsvirt-mcp-server
 ```
 
 ### SSE 模式运行
@@ -102,14 +102,14 @@ zstack-mcp-server
 
 ```bash
 # 命令行方式
-uvx zstack-mcp-server --transport sse --host 0.0.0.0 --port 8000
+uvx zsvirt-mcp-server --transport sse --host 0.0.0.0 --port 8000
 
 # 环境变量方式
 export MCP_TRANSPORT="sse"
 export MCP_HOST="0.0.0.0"
 export MCP_PORT="8000"
 export MCP_PATH="/sse"  # 可选
-uvx zstack-mcp-server
+uvx zsvirt-mcp-server
 ```
 
 > 说明：也兼容 `FASTMCP_HOST` / `FASTMCP_PORT` / `FASTMCP_MOUNT_PATH`（FastMCP 原生环境变量）
@@ -118,14 +118,14 @@ uvx zstack-mcp-server
 
 ```bash
 # 命令行方式
-uvx zstack-mcp-server --transport streamable-http --host 0.0.0.0 --port 8000 --streamable-path /mcp
+uvx zsvirt-mcp-server --transport streamable-http --host 0.0.0.0 --port 8000 --streamable-path /mcp
 
 # 环境变量方式
 export MCP_TRANSPORT="streamable-http"
 export MCP_HOST="0.0.0.0"
 export MCP_PORT="8000"
 export MCP_STREAMABLE_PATH="/mcp"  # 可选
-uvx zstack-mcp-server
+uvx zsvirt-mcp-server
 ```
 
 > 说明：也兼容 `FASTMCP_STREAMABLE_HTTP_PATH`
@@ -148,7 +148,7 @@ uvx zstack-mcp-server
 典型用法：
 ```bash
 # 管理员启动共享 MCP Server
-ZSTACK_ALLOW_ALL_API=false uvx zstack-mcp-server --transport streamable-http --host 0.0.0.0 --port 8000
+ZSTACK_ALLOW_ALL_API=false uvx zsvirt-mcp-server --transport streamable-http --host 0.0.0.0 --port 8000
 ```
 
 用户在 MCP 客户端配置中添加 HTTP 头即可使用各自的账号：
@@ -183,7 +183,7 @@ ZSTACK_ALLOW_ALL_API=false uvx zstack-mcp-server --transport streamable-http --h
   "mcpServers": {
     "zstack": {
       "command": "uvx",
-      "args": ["zstack-mcp-server"],
+      "args": ["zsvirt-mcp-server"],
       "env": {
         "ZSTACK_API_URL": "http://your-zstack-server:8080",
         "ZSTACK_ACCOUNT": "admin",
@@ -201,7 +201,7 @@ ZSTACK_ALLOW_ALL_API=false uvx zstack-mcp-server --transport streamable-http --h
   "mcpServers": {
     "zstack": {
       "command": "uvx",
-      "args": ["zstack-mcp-server"],
+      "args": ["zsvirt-mcp-server"],
       "env": {
         "ZSTACK_API_URL": "http://your-zstack-server:8080",
         "ZSTACK_SESSION_ID": "your-session-uuid",
@@ -337,7 +337,7 @@ AI 会:
 ```bash
 # 克隆仓库
 git clone https://github.com/ZSvirt/zsvirt-mcp-server/zsvirt-mcp-server.git
-cd zstack-mcp-server
+cd zsvirt-mcp-server
 
 # 安装开发依赖
 pip install -e ".[dev]"
