@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "zsvirt-mcp-server"
 version = "0.1.6"
-description = "MCP Server for ZStack Cloud API - enables AI to dynamically query and execute 2000+ ZStack APIs"
+description = "MCP Server for ZSvirt API - enables AI to dynamically query and execute 2000+ ZStack APIs"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
